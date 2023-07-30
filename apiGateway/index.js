@@ -1,10 +1,8 @@
-import express from 'express';
-import routes from './routes';
+import app from "./app.js";
+import dotenv from "dotenv";
 
-const app = express();
-const port = 3000;
-app.use('/', routes);
-
-app.listen(port, () => {
-    console.log('Gateway has started on port', port);
+dotenv.config();
+app.listen(3000, () => {
+    console.log("Gateway listening on port 3000");
+    console.log(process.env.AUTH_ENDPOINT);
 });

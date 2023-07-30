@@ -7,16 +7,20 @@
   "scripts": {
     "dev": "nodemon apiGateway/index.js --watch apiGateway",
     "services": "nodemon Service-Auth/index.js --ignore apiGateway",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gateway": "nodemon apiGateway/index.js --watch apiGateway"
   },
   "keywords": [],
   "author": "Abraham Ortega",
   "license": "ISC",
   "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "axios": "^1.4.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.3.4",
     "mongose": "^0.0.2-security",
     "morgan": "^1.10.0"
