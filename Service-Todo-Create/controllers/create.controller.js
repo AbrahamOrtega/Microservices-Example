@@ -17,6 +17,6 @@ export const create = async (req, res) => {
     res.json({ saveTODO })
 
   } catch (error) {
-    res.send('Error', error)
+    res.status(500).send({"message": error})
   }
 }

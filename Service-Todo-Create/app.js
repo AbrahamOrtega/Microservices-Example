@@ -1,5 +1,5 @@
 import express from "express";
-import pkg from "../package.json";
+import pkg from "../package.json" assert { type: "json" };
 import morgan from "morgan";
 import createRouter from "./routes/create.router.js";
 
@@ -18,6 +18,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use('/create', createRouter);
+app.use('/todo', createRouter);
 
 export default app

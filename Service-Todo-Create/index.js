@@ -4,5 +4,5 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 app.listen(3002, () => {
-  console.log("Service Auth listening on port 3002");
+  console.log("Service Create listening on port 3002");
 });
