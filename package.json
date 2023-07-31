@@ -6,9 +6,13 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon apiGateway/index.js --watch apiGateway",
-    "services": "nodemon Service-Auth/index.js --ignore apiGateway",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gateway": "nodemon apiGateway/index.js --watch apiGateway"
+    "gateway": "nodemon apiGateway/index.js --watch apiGateway",
+    "auth": "nodemon Service-Auth/index.js --watch Service-Auth",
+    "create": "nodemon Service-Todo-Create/index.js --watch Service-Todo-Create",
+    "read": "nodemon Service-Todo-Read/index.js --watch Service-Todo-Read",
+    "update": "nodemon Service-Todo-Update/index.js --watch Service-Todo-Update",
+    "delete": "nodemon Service-Todo-Delete/index.js --watch Service-Todo-Delete"
   },
   "keywords": [],
   "author": "Abraham Ortega",
