@@ -1,9 +1,9 @@
 import {Router} from "express";
-import {create} from "../controllers/create.controller.js";
+import {todoCreate} from "../controllers/create.controller.js";
 import tokenValidation from "../middlewares/auth.middleware.js";
 
-const router = Router
+const router = Router();
 
-router.post(create, '/create', tokenValidation, create)
+router.post('/create', tokenValidation, todoCreate)
 
 export default router
