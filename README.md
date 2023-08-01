@@ -38,4 +38,4 @@ To deploy this project run
 ## API Reference
 
 Download and import this collection for postman  
-[![Download](https://img.shields.io/badge/Postman-Colleaction-orange)](https://github.com/AbrahamOrtega/Microservices-Example/blob/master/docs/Microservices-Example.postman_collection.json)
+[![Download](https://img.shields.io/badge/Postman-Collection-orange)](https://github.com/AbrahamOrtega/Microservices-Example/blob/master/docs/Microservices-Example.postman_collection.json)
