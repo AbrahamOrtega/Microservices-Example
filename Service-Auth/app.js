@@ -2,7 +2,6 @@ import express from "express";
 import morgan from "morgan";
 import pkg from "../package.json" assert { type: "json" };
 import authRouter from "./routes/auth.router.js";
-import userRouter from "./routes/user.router.js";
 
 const app = express();
 
@@ -20,6 +19,6 @@ app.get("/", (req, res) => {
 });
 
 app.use('/auth' ,authRouter);
-app.use('/user', userRouter);
+
 
 export default app;

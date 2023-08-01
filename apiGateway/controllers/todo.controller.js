@@ -1,22 +1,58 @@
+import axios from "axios";
 
 const createTodo = async (req, res) => {
-    res.send("createTodo");
+    axios.post(process.env.SERVICE_TODO_CREATE_URL + "/todo/create", {headers: req.headers, body:req.body}).then(response => {
+        if (response.status !== 200) {
+            res.status(response.status).json(response.data);
+        }
+        res.json(response.data);
+    }).catch(error => {
+        res.status(500).json({ message: "Server error"});
+    })
 }
 
 const listTodo = async (req, res) => {
-    res.send("listTodo");
+    axios.post(process.env.SERVICE_TODO_READ_URL + "/todo/read", {headers: req.headers}).then(response => {
+        if (response.status !== 200) {
+            res.status(response.status).json(response.data);
+        }
+        res.json(response.data);
+    }).catch(error => {
+        res.status(500).json({ message: "Server error"});
+    })
 }
 
 const listTodoById = async (req, res) => {
-    res.send("listTodoById");
+    axios.post(process.env.SERVICE_TODO_READ_URL + "/todo/create/:id", {headers: req.headers, body:req.body}).then(response => {
+        if (response.status !== 200) {
+            res.status(response.status).json(response.data);
+        }
+        res.json(response.data);
+    }).catch(error => {
+        res.status(500).json({ message: "Server error"});
+    })
 }
 
 const updateTodo = async (req, res) => {
-    res.send("updateTodo");
+    axios.post(process.env.SERVICE_TODO_UPDATE_URL + "/todo/update/:id", {headers: req.headers}).then(response => {
+        if (response.status !== 200) {
+            res.status(response.status).json(response.data);
+        }
+        res.json(response.data);
+    }).catch(error => {
+        res.status(500).json({ message: "Server error"});
+    })
 }
 
 const deleteTodo = async (req, res) => {
-    res.send("deleteTodo");
+    axios.delete(process.env.SERVICE_TODO_DELETE_URL + "/todo/delete/"+ req.params.id, {headers: req.headers}).then(response => {
+        if (response.status !== 200) {
+            res.status(response.status).json(response.data);
+        }
+        res.json(response.data);
+    }).catch(error => {
+        res.status(500).json({ message: "Server error"});
+    })
 }
 
 export { createTodo, listTodo, listTodoById, updateTodo, deleteTodo };
