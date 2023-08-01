@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "d8d18634-9acd-41c8-9be1-0eb201afa98f",
+		"name": "Microservices-Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21287873"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Auth signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"abraham768\",\r\n    \"email\": \"6120105800@utsalamanca.edu.mx\",\r\n    \"password\": \"Hola.852\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"6120105800@utsalamanca.edu.mx\",\r\n    \"password\": \"Hola.852\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todo",
+			"item": [
+				{
+					"name": "Todo Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzhiZTUwN2NlYzdjNjVjM2Y5ZDg5YSIsImlhdCI6MTY5MDg3NzU0OCwiZXhwIjoxNjkwOTYzOTQ4fQ.IGdnY02C0F1LumCfcoyu0-yelTd_qA4C2V5rovaY5g8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"test final delete\",\r\n    \"description\": \"skdfnsdkfjnsdcklsajndcskldcnsakldjcnsadjkcn sakldcnsadkcjnsadc\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/todo/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todo",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Todo Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzhiZTUwN2NlYzdjNjVjM2Y5ZDg5YSIsImlhdCI6MTY5MDg3NzU0OCwiZXhwIjoxNjkwOTYzOTQ4fQ.IGdnY02C0F1LumCfcoyu0-yelTd_qA4C2V5rovaY5g8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/todo/delete/64c8beac77b4a8f3a0050e42",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todo",
+								"delete",
+								"64c8beac77b4a8f3a0050e42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Todo List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzhiZTUwN2NlYzdjNjVjM2Y5ZDg5YSIsImlhdCI6MTY5MDg3NzU0OCwiZXhwIjoxNjkwOTYzOTQ4fQ.IGdnY02C0F1LumCfcoyu0-yelTd_qA4C2V5rovaY5g8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/todo/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todo",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Todo ListById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzhiZTUwN2NlYzdjNjVjM2Y5ZDg5YSIsImlhdCI6MTY5MDg3NzU0OCwiZXhwIjoxNjkwOTYzOTQ4fQ.IGdnY02C0F1LumCfcoyu0-yelTd_qA4C2V5rovaY5g8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/todo/list/64c8be9a77b4a8f3a0050e3e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todo",
+								"list",
+								"64c8be9a77b4a8f3a0050e3e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Todo Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzhiZTUwN2NlYzdjNjVjM2Y5ZDg5YSIsImlhdCI6MTY5MDg3NzU0OCwiZXhwIjoxNjkwOTYzOTQ4fQ.IGdnY02C0F1LumCfcoyu0-yelTd_qA4C2V5rovaY5g8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"test final de actualizacion\",\r\n    \"description\": \"The checked answer does work but officially in MongooseJS latest, you should use pull\",\r\n    \"done\": false\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/todo/update/64c8be9a77b4a8f3a0050e3e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todo",
+								"update",
+								"64c8be9a77b4a8f3a0050e3e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
