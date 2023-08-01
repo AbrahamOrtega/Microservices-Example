@@ -12,7 +12,7 @@ const createTodo = async (req, res) => {
 }
 
 const listTodo = async (req, res) => {
-    axios.post(process.env.SERVICE_TODO_READ_URL + "/todo/read", {headers: req.headers}).then(response => {
+    axios.get(process.env.SERVICE_TODO_READ_URL + "/todo/list", {headers: req.headers}).then(response => {
         if (response.status !== 200) {
             res.status(response.status).json(response.data);
         }
@@ -23,7 +23,7 @@ const listTodo = async (req, res) => {
 }
 
 const listTodoById = async (req, res) => {
-    axios.post(process.env.SERVICE_TODO_READ_URL + "/todo/create/:id", {headers: req.headers, body:req.body}).then(response => {
+    axios.get(process.env.SERVICE_TODO_READ_URL + "/todo/list/" + req.params.id, {headers: req.headers, body:req.body}).then(response => {
         if (response.status !== 200) {
             res.status(response.status).json(response.data);
         }
@@ -34,7 +34,7 @@ const listTodoById = async (req, res) => {
 }
 
 const updateTodo = async (req, res) => {
-    axios.post(process.env.SERVICE_TODO_UPDATE_URL + "/todo/update/:id", {headers: req.headers}).then(response => {
+    axios.put(process.env.SERVICE_TODO_UPDATE_URL + "/todo/update/" + req.params.id, {headers: req.headers, body: req.body}).then(response => {
         if (response.status !== 200) {
             res.status(response.status).json(response.data);
         }
