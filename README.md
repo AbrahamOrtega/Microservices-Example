@@ -39,3 +39,8 @@ To deploy this project run
 
 Download and import this collection for postman  
 [![Download](https://img.shields.io/badge/Postman-Collection-orange)](https://github.com/AbrahamOrtega/Microservices-Example/blob/master/docs/Microservices-Example.postman_collection.json)
+
+## Diagram Architecture
+
+![alt text](https://github.com/AbrahamOrtega/Microservices-Example/blob/master/docs/Diagram%20Architecture.svg?raw=true)
+
